@@ -183,3 +183,9 @@ You can refer sample file at :core-site.xml
 Installation:
 
 Download stable version: http://www-us.apache.org/dist/hive/hive-2.3.3/
+
+
+Useful links:
+
+ - http://hadooponwindows10.blogspot.com/2016/07/apache-hadoop-271-installation-on-win10.html
+ - https://www.zymr.com/hive-installation-windows-7/
