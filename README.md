@@ -14,15 +14,15 @@ Memory requirements :
 
 Installation :
 
-Java Installation : 
+ - Java Installation : 
  Follow java installation wizard to install JDK and JRE.Make sure your java install directory looks like as shown below.
 
-Hadoop Installation : Go to Command prompt and type command as "bash".
+ - Hadoop Installation : Go to Command prompt and type command as "bash".
  You will see Unix like console as shown below.(Yes ,no cygwin installation is required anymore as Unix like console is provided in Windows10 which is pre-installed cygwin).
 
  Go to the folder where Hadoop downloaded tar is available and type command "tar -xzf hadoop-2.7.1.tar.gz".This will unzip hadoop folder and place it in the same directory.
 
- Configuration : Systems Variables : Set JAVA_HOME,JRE_HOME and HADOOP_HOME is set as shown below :
+ - Configuration : Systems Variables : Set JAVA_HOME,JRE_HOME and HADOOP_HOME is set as shown below :
  
  Append PATH variable with : ;C:\Hitesh\Hadoop\hadoop-2.7.1\bin;C:\java\jdk1.8.0_92;C:\java\jre1.8.0_92\bin
  Hadoop Configuration :
@@ -38,7 +38,8 @@ Hadoop Installation : Go to Command prompt and type command as "bash".
  set PATH=%PATH%;%HADOOP_PREFIX%\bin
 
  You can refer sample file at :hadoop-env.cmd
- Core-site.xml
+ 
+  - Core-site.xml
  Go to HADOOP_HOME/etc/hadoop
  Open core-site.xml file into notepad
  Add property as shown below :
@@ -65,7 +66,7 @@ Hadoop Installation : Go to Command prompt and type command as "bash".
 You can refer sample file at :core-site.xml
 <<WINUSER>> is windows user(s) from which you wants to connect and execute hadoop/hdfs or mapreduce commands.In my case it was same user.
 
- Mapred-site.xml
+  - Mapred-site.xml
  Go to HADOOP_HOME/etc/hadoop
  Open mapred-site.xml file into notepad
  Add following lines :
@@ -91,12 +92,13 @@ You can refer sample file at :core-site.xml
  Value : -Xmx256m
  Description :Same as mapreduce.map.java.opts this property is used to define upper limit for reducer java process java heap size.Value of this parameter should be less than memory allocated in mapreduce.reduce.memory.mb so that java code can execute without out-of-memory error.Atleast 20% to 30% less.
  You can refer sample file at :mapred-site.xml
- Slaves File
+ 
+  - Slaves File
  Go to HADOOP_HOME/etc/hadoop
  Edit or create Slaves file and write localhost in it.
-
  You can refer sample file at :slaves
- Yarn-site.xml
+
+ - Yarn-site.xml
  Go to HADOOP_HOME/etc/hadoop
  Open Yarn-site.xml into notepad
  Add Following lines:
@@ -105,20 +107,26 @@ You can refer sample file at :core-site.xml
  Property Name :yarn.nodemanager.aux-services
  Value : mapreduce_shuffle
  Short Description: This property is for Nodemanager do see which aux-services needs to be used."mapreduce_shuffle" is the default value.
+ 
  Property Name :yarn.nodemanager.aux-services.mapreduce.shuffle.class
  Value : org.apache.hadoop.mapred.ShuffleHandler
  Short Description:This property is for Nodemanager to identify which class to use for shuffling when aux-services are set to "mapreduce_shuffle".
+ 
  Property Name :yarn.nodemanager.resource.memory-mb
  Value : 10000
  Short Description:This property is used to set Maximum Amount of physical memory, in MB, that can be allocated for containers.This is the maximum memory in MB which can be used by yarn to perform Hadoop operations.
+ 
  Property Name :yarn.scheduler.minimum-allocation-mb
  Value : 500
  Short Description:This property is used to set Minimum Amount of physical memory, in MB allocated to yarn.
+ 
  Property Name :yarn.application.classpath
  Value:%HADOOP_CONF_DIR%,%HADOOP_COMMON_HOME%/share/hadoop/common/*,%HADOOP_COMMON_HOME%/share/hadoop/common/lib/*,%HADOOP_HDFS_HOME%/share/hadoop/hdfs/*,%HADOOP_HDFS_HOME%/share/hadoop/hdfs/lib/*,%HADOOP_MAPRED_HOME%/share/hadoop/mapreduce/*,%HADOOP_MAPRED_HOME%/share/hadoop/mapreduce/lib/*,%HADOOP_YARN_HOME%/share/hadoop/yarn/*,%HADOOP_YARN_HOME%/share/hadoop/yarn/lib/*
  Short Description:Classpath for yarn.
+ 
  You can refer sample file at :yarn-site.xml
- Hdfs-site.xml
+ 
+  - Hdfs-site.xml
  Go to HADOOP_HOME/etc/hadoop
  Open hdfs-site.xml file into notepad
  Add following lines :
@@ -133,6 +141,7 @@ You can refer sample file at :core-site.xml
  Go to Run and type CMD to open command prompt.
  Right Click on Command Prompt Icon and select Run as administrator as shown below.It is very important to run command prompt as administrator since hadoop requires admin privileges for various tasks.
 
+ - Start the Hadoop Processes:
  Go to HADOOP_HOME/bin
  Execute command "hdfs namenode -format" as shown below.
 
