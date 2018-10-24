@@ -5,7 +5,7 @@ I am writing this blog to share my experience and steps I have followed to setup
 
 Required software  :
  - Java version 1.8 64-bit 
- - Apache Hadoop 2.7.1 (Stable release)
+ - Apache Hadoop 2.7.1 (Stable release) : https://archive.apache.org/dist/hadoop/core/hadoop-2.7.1/
  - MySql Database (Note : not required for Hadoop but required for other hadoop related tools)
 
 Memory requirements :
@@ -177,3 +177,9 @@ You can refer sample file at :core-site.xml
  Go to Hadoop user-interface ,new directory and file should come up into search results.
 
  Note that by default hadoop creates all the directories to /user/<<WINUSER>>/hadooptest hdfs directory.
+
+#HiveOnWindows10
+
+Installation:
+
+Download stable version: http://www-us.apache.org/dist/hive/hive-2.3.3/
