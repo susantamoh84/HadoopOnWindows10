@@ -178,7 +178,7 @@ You can refer sample file at :core-site.xml
 
  Note that by default hadoop creates all the directories to /user/<<WINUSER>>/hadooptest hdfs directory.
 
-#HiveOnWindows10
+# HiveOnWindows10
 
 Installation:
 
