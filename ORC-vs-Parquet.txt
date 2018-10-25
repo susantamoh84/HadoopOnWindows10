@@ -1,0 +1,11 @@
+Src: https://community.hortonworks.com/questions/2067/orc-vs-parquet-when-to-use-one-over-the-other.html
+
+In my mind the two biggest considerations for ORC over Parquet are:
+
+1. Many of the performance improvements provided in the Stinger initiative are dependent on features of the ORC 
+   format including block level index for each column. This leads to potentially more efficient I/O allowing Hive 
+   to skip reading entire blocks of data if it determines predicate values are not present there. Also the 
+   Cost Based Optimizer has the ability to consider column level metadata present in ORC files in order to generate 
+   the most efficient graph.
+
+2. ACID transactions are only possible when using ORC as the file format.
