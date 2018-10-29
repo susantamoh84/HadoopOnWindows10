@@ -184,6 +184,11 @@ Installation:
 
 Download stable version: http://www-us.apache.org/dist/hive/hive-2.3.3/
 
+Learn About Hive Data Access: https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.5/bk_data-access/content/ch_using-hive.html
+
+Hive Streaming Compactions: https://community.hortonworks.com/articles/49971/hive-streaming-compaction.html
+
+Hive Transactions: https://cwiki.apache.org/confluence/display/Hive/Hive+Transactions
 
 Useful links:
 
